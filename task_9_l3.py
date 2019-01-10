@@ -16,25 +16,20 @@ ROWS = 5
 COLS = 4
 matrix = get_matrix(ROWS, COLS)
 
-matrix_T = []
+max_value = 0
+
 for i in range(0, len(matrix[0])):
-    row = []
-    for j in range(0, len(matrix)):
-        row.append(matrix[j][i])
-    matrix_T.append(row)
-
-min_values = []
-for row in matrix_T:
-    min_value = row[0]
-    for item in row:
-        if item < min_value:
-            min_value = item
-    min_values.append(min_value)
-
-max_value = min_values[0]
-for value in min_values:
-    if value > max_value:
-        max_value = value
-
-print(f'исходная матрица {matrix} содержит минимальные значения в каждом стобце {min_values}, \n'
-      f'максимальное из минимальных значений равно {max_value}')
+    col = []
+    for row in matrix:
+        col.append(row[i])
+    # print(col)
+    min_value_col = col[0]
+    for item in col:
+        if item < min_value_col:
+            min_value_col = item    
+    if min_value_col > max_value or max_value == 0:
+        max_value = min_value_col
+        
+print(f'исходная матрица {matrix} \n среди минимальных значений столбцов матрицы'
+      f'содержит максимальное значение {max_value}')
+        
