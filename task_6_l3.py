@@ -12,25 +12,25 @@ array = get_array()
 
 max_value = array[0]
 min_value = array[0]
-max_idx = 0
-min_idx = 0
+
 
 for idx in range(1, len(array)):
     if array[idx] > max_value:
         max_value = array[idx]
-        max_idx = idx
+       
     if array[idx] < min_value:
-        min_value = array[idx]
-        min_idx = idx
-
-if max_idx > min_idx:
-    clear_array = array[min_idx+1:max_idx]
-else:
-    clear_array = array[max_idx+1:min_idx]
-
+        min_value = array[idx]        
+        
 summ = 0
-for item in clear_array:
-    summ += item
+
+for idx,item in enumerate(array):
+    if item == max_value or item == min_value:
+        for i in range(idx + 1,len(array)):            
+            if array[i] == max_value or array[i] == min_value:
+                break
+            else:
+                summ += array[i]
+        break
 
 print(f'сумма элементов, находящихся между минимальным элементом {min_value} \n'
       f'и максимальным элементом {max_value} в исходном массиве {array} равна {summ}')
