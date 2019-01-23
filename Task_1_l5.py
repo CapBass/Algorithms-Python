@@ -6,7 +6,7 @@ from collections import defaultdict as defdict
 enterprise_count = int(input('Введите количество предприятий '))
 
 enterprises = defdict(int)
-summary = 0
+summary = 0.0
 QUARTERS = 4
 
 for i in range(enterprise_count):
