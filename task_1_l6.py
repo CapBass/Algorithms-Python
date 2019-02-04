@@ -40,7 +40,7 @@ def max_min_matrix_1(rows, cols):
             max_value = value
 
     return str(f'исходная матрица {matrix} содержит минимальные значения в каждом стобце {min_values} '
-               f'максимальное из минимальных значений равно {max_value}'), get_size_var(locals())
+               f'максимальное из минимальных значений равно {max_value}'), get_size_var(locals().values())
 
 
 def max_min_matrix_2(rows, cols):
@@ -59,7 +59,7 @@ def max_min_matrix_2(rows, cols):
             max_value = min_value_col
 
     return str(f'исходная матрица {matrix} среди минимальных значений столбцов матрицы '
-               f'содержит максимальное значение {max_value}'), get_size_var(locals())
+               f'содержит максимальное значение {max_value}'), get_size_var(locals().values())
 
 
 def max_min_matrix_3(rows, cols):
@@ -73,7 +73,7 @@ def max_min_matrix_3(rows, cols):
         col_mins.append(min(col))
 
     return str(f'исходная матрица {matrix} среди минимальных значений столбцов матрицы {col_mins} '
-               f'содержит максимальное значение {max(col_mins)}'), get_size_var(locals())
+               f'содержит максимальное значение {max(col_mins)}'), get_size_var(locals().values())
 
 
 _, memory_size_1 = max_min_matrix_1(4, 5)
