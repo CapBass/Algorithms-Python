@@ -26,7 +26,5 @@ def merge_sort(array):
         return result
 
 array = [random.uniform(0, 49) for _ in range(0,15)]
-random.shuffle(array)
-sort_array = array.copy()
 
 print(f'исходный массив - {array} \n отсортированный массив - {merge_sort(array)}')

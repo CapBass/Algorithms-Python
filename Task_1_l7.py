@@ -18,6 +18,5 @@ def my_bubble_sort(array):
 
 
 array = [random.randint(-100, 99) for _ in range(0,15)]
-random.shuffle(array)
-sort_array = my_bubble_sort(array)
-print(f'исходный массив - {array} \n отсортированный массив - {sort_array}')
+
+print(f'исходный массив - {array} \n отсортированный массив - {my_bubble_sort(array)}')

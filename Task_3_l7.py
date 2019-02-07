@@ -26,8 +26,7 @@ def get_median(array):
  
  
 def get_array(m, start, end):
-    array = [random.randint(start, end) for _ in range(0, 2 * m + 1)]
-    random.shuffle(array)
+    array = [random.randint(start, end) for _ in range(0, 2 * m + 1)]    
     return array
 
 
