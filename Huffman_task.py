@@ -2,7 +2,7 @@
 
 from collections import Counter, deque
 
-text = 'строка для теста'
+text = 'Это строка для теста'
 
 
 class Node:
@@ -68,14 +68,15 @@ class Huffman_table:
         frequency.reverse()
         huffman_tree = self.__get_huffman_tree(frequency)
         huffman_table = self.__get_huffman_table(huffman_tree)
-        return huffman_table
+        encoding = []
+        for i in self.text:
+            if i in huffman_table:
+                encoding.append(huffman_table[i])
+        return huffman_table, "".join(encoding)
 
 
-huffman_table = Huffman_table(text).encode()
-result = []
-for i in text:
-    if i in huffman_table:
-        result.append(huffman_table[i])
+huffman_table, encoding = Huffman_table(text).encode()
+
 print(
     f'Искомый текст "{text}" после кодирования алгоритмом Хаффмана:'
-    f'\n{"".join(result)}\nТаблица Хаффмана:{huffman_table}')
+	f'\n{encoding}\nТаблица Хаффмана:{huffman_table}')
